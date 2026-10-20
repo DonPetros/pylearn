@@ -1,6 +1,6 @@
 {
  "browser": "WebKit (Playwright) with iPhone 13 profile",
- "date": "2026-10-20T12:13:05.216Z",
+ "date": "2026-10-20T12:15:20.776Z",
  "results": [
   {
    "name": "home shows 7 units",
@@ -119,7 +119,7 @@
   {
    "name": "infinite loop stopped by timeout",
    "pass": true,
-   "extra": "8058 ms"
+   "extra": "8082 ms"
   },
   {
    "name": "Python works again after a timeout",
