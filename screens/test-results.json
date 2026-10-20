@@ -1,0 +1,160 @@
+{
+ "browser": "WebKit (Playwright) with iPhone 13 profile",
+ "date": "2026-10-20T12:13:05.216Z",
+ "results": [
+  {
+   "name": "home shows 7 units",
+   "pass": true
+  },
+  {
+   "name": "home shows 25 lessons total",
+   "pass": true
+  },
+  {
+   "name": "Pyodide NOT loaded on home (lazy)",
+   "pass": true
+  },
+  {
+   "name": "no horizontal overflow: home",
+   "pass": true,
+   "extra": "390 vs 390"
+  },
+  {
+   "name": "tap targets >= 44px: home",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "no horizontal overflow: lesson card",
+   "pass": true,
+   "extra": "390 vs 390"
+  },
+  {
+   "name": "tap targets >= 44px: lesson card",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "wrong answer gives \"Not quite\" feedback",
+   "pass": true
+  },
+  {
+   "name": "no horizontal overflow: order exercise",
+   "pass": true,
+   "extra": "390 vs 390"
+  },
+  {
+   "name": "code challenge passes with Pyodide",
+   "pass": true
+  },
+  {
+   "name": "Pyodide loaded lazily for the challenge",
+   "pass": true
+  },
+  {
+   "name": "no horizontal overflow: code challenge",
+   "pass": true,
+   "extra": "390 vs 390"
+  },
+  {
+   "name": "tap targets >= 44px: code challenge",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "hint button shows a hint",
+   "pass": true
+  },
+  {
+   "name": "lesson 1 completed (all exercise types)",
+   "pass": true
+  },
+  {
+   "name": "XP awarded after lesson 1",
+   "pass": true,
+   "extra": "xp=65"
+  },
+  {
+   "name": "wrong challenge code fails its tests",
+   "pass": true,
+   "extra": "Test 1 failed (input: 4, 5) expected: 9 got: 45Test 2 failed (input: 10, -3) expected: 7 got: 10-3"
+  },
+  {
+   "name": "Run button in a challenge supports input()",
+   "pass": true
+  },
+  {
+   "name": "all 25 lessons completed in the browser with every answer accepted",
+   "pass": true,
+   "extra": "25/25"
+  },
+  {
+   "name": "playground runs code with two input() calls",
+   "pass": true,
+   "extra": "\"Name? Sam\\nAge? 19\\nSam is an adult\\nLine 1\\nLine 2\\nLine 3\\n\""
+  },
+  {
+   "name": "input box hidden after program ends",
+   "pass": true
+  },
+  {
+   "name": "no horizontal overflow: playground",
+   "pass": true,
+   "extra": "390 vs 390"
+  },
+  {
+   "name": "tap targets >= 44px: playground",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "editor auto-indents after a colon and Tab inserts 4 spaces",
+   "pass": true,
+   "extra": "\"if True:\\n    x = 1\\n    \""
+  },
+  {
+   "name": "errors show the type, line and a plain-English tip",
+   "pass": true
+  },
+  {
+   "name": "infinite loop stopped by timeout",
+   "pass": true,
+   "extra": "8058 ms"
+  },
+  {
+   "name": "Python works again after a timeout",
+   "pass": true
+  },
+  {
+   "name": "progress persists after reload",
+   "pass": true,
+   "extra": "xp=1685 streak=1"
+  },
+  {
+   "name": "daily streak recorded",
+   "pass": true
+  },
+  {
+   "name": "playground code persists after reload",
+   "pass": true
+  },
+  {
+   "name": "larger text setting applies",
+   "pass": true
+  },
+  {
+   "name": "tap targets >= 44px: progress/settings",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "reset progress clears XP and lessons",
+   "pass": true
+  },
+  {
+   "name": "no JavaScript errors during the run",
+   "pass": true,
+   "extra": ""
+  }
+ ]
+}

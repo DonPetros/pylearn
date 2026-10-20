@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PyLearn</title>
+<meta name="description" content="Learn Python from scratch in short, bite-sized steps.">
+<meta name="theme-color" content="#0a0a12">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PyLearn">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div id="app">
+  <main id="view" tabindex="-1"></main>
+  <nav id="tabbar" aria-label="Main">
+    <a href="#/" data-tab="learn"><span class="ti">&gt;_</span><span>Learn</span></a>
+    <a href="#/play" data-tab="play"><span class="ti">{ }</span><span>Playground</span></a>
+    <a href="#/me" data-tab="me"><span class="ti">XP</span><span>Progress</span></a>
+  </nav>
+</div>
+<div id="modal" class="modal" hidden></div>
+<noscript><p style="padding:24px;color:#fff">PyLearn needs JavaScript turned on.</p></noscript>
+<script src="js/highlight.js"></script>
+<script src="js/py.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

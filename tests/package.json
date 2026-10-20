@@ -1,0 +1,7 @@
+{
+  "name": "pylearn-tests",
+  "private": true,
+  "description": "Browser tests for PyLearn. Serve the site first: python3 -m http.server 8811 (from the pylearn folder).",
+  "scripts": { "test": "node hl-test.js && node test.js && node offline.js" },
+  "devDependencies": { "playwright": "1.64.1" }
+}

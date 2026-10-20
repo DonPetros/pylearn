@@ -1,0 +1,2710 @@
+{
+ "version": 1,
+ "title": "PyLearn",
+ "python": "Pyodide 314.0.7",
+ "units": [
+  {
+   "id": "u1",
+   "week": "Week 1",
+   "title": "Python basics",
+   "blurb": "print, comments, variables, types, f-strings, input",
+   "status": "complete",
+   "lessons": [
+    {
+     "id": "u1l1",
+     "title": "Your first program",
+     "steps": [
+      {
+       "type": "card",
+       "title": "print() shows things on screen",
+       "text": "`print()` tells Python to show something. Text goes inside quotes, and the quotes are not shown. Each `print()` starts on a new line.",
+       "code": "print(\"Hello, world\")\nprint(\"I am learning Python\")",
+       "out": "Hello, world\nI am learning Python"
+      },
+      {
+       "type": "card",
+       "title": "Printing more than one thing",
+       "text": "Put a comma between values and `print()` adds a space between them for you. Numbers do not need quotes.",
+       "code": "print(\"I am\", 19, \"years old\")",
+       "out": "I am 19 years old"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(\"Good\", \"morning\")",
+       "options": [
+        "Good morning",
+        "Goodmorning",
+        "Good, morning",
+        "\"Good\" \"morning\""
+       ],
+       "answer": 0,
+       "explain": "The comma separates the values, and print() puts one space between them.",
+       "hint": "Commas are not printed. What does print() add between values?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which line shows the text Hi on the screen?",
+       "options": [
+        "print(\"Hi\")",
+        "print(Hi)",
+        "Print(\"Hi\")",
+        "print[\"Hi\"]"
+       ],
+       "answer": 0,
+       "explain": "Text needs quotes, print is all lower case, and it uses round brackets.",
+       "hint": "Python is case-sensitive, and text needs quotes.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it shows Ready",
+       "code": "___(\"Ready\")",
+       "answers": [
+        "print"
+       ],
+       "distractors": [
+        "Print",
+        "show",
+        "echo"
+       ],
+       "expect": "Ready",
+       "explain": "print is the built-in command for showing output. Print with a capital P does not exist.",
+       "hint": "It is all lower case."
+      },
+      {
+       "type": "order",
+       "q": "Put the lines in order so the output reads Ready, Steady, Go",
+       "lines": [
+        "print(\"Ready\")",
+        "print(\"Steady\")",
+        "print(\"Go\")"
+       ],
+       "expect": "Ready\nSteady\nGo",
+       "explain": "Python runs lines from top to bottom.",
+       "hint": "The first line to run is the first one shown."
+      },
+      {
+       "type": "code",
+       "q": "Write a program that prints exactly: Python is fun",
+       "starter": "# Type your code below\n",
+       "tests": [
+        {
+         "expected": "Python is fun"
+        }
+       ],
+       "solution": "print(\"Python is fun\")",
+       "hint": "Use print() with the text in quotes: print(\"...\")",
+       "explain": "Text in quotes inside print() is shown exactly as written."
+      }
+     ]
+    },
+    {
+     "id": "u1l2",
+     "title": "Comments",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Comments are notes for humans",
+       "text": "A line starting with `#` is a comment. Python ignores it completely. Use comments to explain why your code does something.",
+       "code": "# This greets the user\nprint(\"Welcome\")  # a comment can go at the end of a line too",
+       "out": "Welcome"
+      },
+      {
+       "type": "card",
+       "title": "Notes across several lines",
+       "text": "For a longer note, start each line with `#`. You will also see text in triple quotes. At the top of a file or function this is called a docstring, and it describes what the code does.",
+       "code": "\"\"\"\nProgram: greeting.py\nShows a welcome message.\n\"\"\"\n# Step 1: show the message\nprint(\"Hi\")",
+       "out": "Hi"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "# print(\"A\")\nprint(\"B\")\n# print(\"C\")",
+       "options": [
+        "B",
+        "A\nB\nC",
+        "A\nC",
+        "Nothing"
+       ],
+       "answer": 0,
+       "explain": "Lines starting with # are ignored, so only the middle print runs.",
+       "hint": "Which line does not start with #?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What does Python do with a comment?",
+       "options": [
+        "Ignores it",
+        "Prints it",
+        "Shows an error",
+        "Runs it twice"
+       ],
+       "answer": 0,
+       "explain": "Comments are only for people reading the code. Python skips them.",
+       "hint": "Comments are for humans, not the computer.",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Turn the first line into a comment so only Bye is shown",
+       "code": "___ print(\"Hello\")\nprint(\"Bye\")",
+       "answers": [
+        "#"
+       ],
+       "distractors": [
+        "//",
+        "/*",
+        "--"
+       ],
+       "expect": "Bye",
+       "explain": "Python comments start with #. // and /* are used in other languages such as C and Java.",
+       "hint": "Python uses one symbol, the hash."
+      },
+      {
+       "type": "code",
+       "q": "Write a comment on the first line saying what the program does. Then print: Done",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Done"
+        }
+       ],
+       "solution": "# Shows that the program has finished\nprint(\"Done\")",
+       "hint": "Start a line with # for the comment, then use print() on the next line.",
+       "explain": "The comment is ignored when the program runs, so only Done is printed.",
+       "require": [
+        {
+         "text": "#",
+         "msg": "Add a comment that starts with #."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l3",
+     "title": "Variables",
+     "steps": [
+      {
+       "type": "card",
+       "title": "A variable is a labelled box",
+       "text": "A variable stores a value under a name. Here `=` means 'store this value', not 'is equal to'. Use the name later to get the value back.",
+       "code": "name = \"Sam\"\nage = 19\nprint(name, age)",
+       "out": "Sam 19"
+      },
+      {
+       "type": "card",
+       "title": "Changing a variable",
+       "text": "You can give a variable a new value at any time, and the old one is replaced. Python reads code top to bottom, so the order of lines matters.",
+       "code": "score = 10\nscore = score + 5\nprint(score)",
+       "out": "15"
+      },
+      {
+       "type": "card",
+       "title": "Naming rules",
+       "text": "Names can use letters, numbers and `_`, but cannot start with a number or contain spaces. They are case-sensitive, so `name` and `Name` are different. Choose clear names such as `total_price`.",
+       "code": "first_name = \"Ali\"\nFirst_name = \"Bo\"\nprint(first_name)",
+       "out": "Ali"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = 3\nx = x * 2\nprint(x)",
+       "options": [
+        "6",
+        "3",
+        "x",
+        "5"
+       ],
+       "answer": 0,
+       "explain": "x starts as 3, then x * 2 (6) is stored back in x.",
+       "hint": "Work out the right-hand side first, then store it.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which is a valid variable name?",
+       "options": [
+        "user_name",
+        "2nd_place",
+        "user name",
+        "user-name"
+       ],
+       "answer": 0,
+       "explain": "Names cannot start with a digit or contain spaces or hyphens. Underscores are fine.",
+       "hint": "Only letters, digits and _ are allowed, and no digit first.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Store 42 in a variable called answer, then show it",
+       "code": "answer ___ 42\nprint(___)",
+       "answers": [
+        "=",
+        "answer"
+       ],
+       "distractors": [
+        "==",
+        "\"answer\"",
+        ":"
+       ],
+       "expect": "42",
+       "explain": "= stores the value. print(answer) without quotes shows what is stored in the variable.",
+       "hint": "Quotes would print the word itself."
+      },
+      {
+       "type": "order",
+       "q": "Put these in order so the program prints 6",
+       "lines": [
+        "a = 5",
+        "b = a + 1",
+        "print(b)"
+       ],
+       "expect": "6",
+       "explain": "A variable must have a value before you use it.",
+       "hint": "Which variable has to exist first?"
+      },
+      {
+       "type": "code",
+       "q": "Make a variable called city that holds \"London\", then print: I live in London",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "I live in London"
+        }
+       ],
+       "solution": "city = \"London\"\nprint(\"I live in\", city)",
+       "hint": "Store it with city = \"London\", then print(\"I live in\", city).",
+       "explain": "The comma adds the space between I live in and the value of city.",
+       "require": [
+        {
+         "text": "city",
+         "msg": "Use a variable called city."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l4",
+     "title": "Data types",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Four basic types",
+       "text": "`int` is a whole number, `float` has a decimal point, `str` is text in quotes and `bool` is `True` or `False`. `type()` tells you which one a value is.",
+       "code": "print(type(7))\nprint(type(7.5))\nprint(type(\"7\"))\nprint(type(True))",
+       "out": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>"
+      },
+      {
+       "type": "card",
+       "title": "Quotes change everything",
+       "text": "Without quotes, `7` is a number. With quotes, `\"7\"` is text. Adding numbers does maths, but adding strings joins them together.",
+       "code": "print(7 + 7)\nprint(\"7\" + \"7\")",
+       "out": "14\n77"
+      },
+      {
+       "type": "card",
+       "title": "Maths operators",
+       "text": "`+`, `-` and `*` work as you would expect. `/` always gives a float. `//` divides and drops the remainder, `%` gives only the remainder, and `**` is a power.",
+       "code": "print(7 / 2)\nprint(7 // 2)\nprint(7 % 2)\nprint(2 ** 3)",
+       "out": "3.5\n3\n1\n8"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(type(3.0))",
+       "options": [
+        "<class 'float'>",
+        "<class 'int'>",
+        "<class 'str'>",
+        "3.0"
+       ],
+       "answer": 0,
+       "explain": "3.0 has a decimal point, so it is a float even though it is a whole number.",
+       "hint": "Look for the decimal point.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(\"3\" + \"4\")",
+       "options": [
+        "34",
+        "7",
+        "3 4",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "Both values are strings, so + joins them rather than adding.",
+       "hint": "Are these numbers or text?",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(10 / 2)",
+       "options": [
+        "5.0",
+        "5",
+        "2",
+        "10.2"
+       ],
+       "answer": 0,
+       "explain": "/ always gives a float, even when the answer is whole.",
+       "hint": "What type does / always give?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What type is True?",
+       "options": [
+        "bool",
+        "str",
+        "int",
+        "float"
+       ],
+       "answer": 0,
+       "explain": "True and False, with a capital letter and no quotes, are booleans (bool).",
+       "hint": "It is one of two special values.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it prints 2.5",
+       "code": "x = 10 ___ 4\nprint(x)",
+       "answers": [
+        "/"
+       ],
+       "distractors": [
+        "//",
+        "%",
+        "*"
+       ],
+       "expect": "2.5",
+       "explain": "10 / 4 is 2.5. // would give 2 and % would give the remainder, 2.",
+       "hint": "You want normal division with decimals."
+      },
+      {
+       "type": "code",
+       "q": "Print the type of the value 3.14",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "<class 'float'>"
+        }
+       ],
+       "solution": "print(type(3.14))",
+       "hint": "Put 3.14 inside type(), and put that inside print().",
+       "explain": "type(3.14) is float, because the number has a decimal point.",
+       "require": [
+        {
+         "text": "type(",
+         "msg": "Use type() to find the type."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u1l5",
+     "title": "f-strings",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Putting values into text",
+       "text": "An f-string has an `f` just before the opening quote. Anything inside `{}` is replaced with its value. It is the neatest way to build a sentence.",
+       "code": "name = \"Sam\"\nage = 19\nprint(f\"{name} is {age} years old\")",
+       "out": "Sam is 19 years old"
+      },
+      {
+       "type": "card",
+       "title": "Three ways compared",
+       "text": "Commas add spaces for you. `+` only joins strings, so a number must be converted with `str()` first. An f-string handles any type.",
+       "code": "score = 7\nprint(\"Score:\", score)\nprint(\"Score: \" + str(score))\nprint(f\"Score: {score}\")",
+       "out": "Score: 7\nScore: 7\nScore: 7"
+      },
+      {
+       "type": "card",
+       "title": "Maths inside the braces",
+       "text": "You can put a small calculation inside `{}`. Python works it out before printing.",
+       "code": "price = 4\nqty = 3\nprint(f\"Total: {price * qty}\")",
+       "out": "Total: 12"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "n = 5\nprint(f\"{n} x 2 = {n * 2}\")",
+       "options": [
+        "5 x 2 = 10",
+        "{n} x 2 = {n * 2}",
+        "n x 2 = 10",
+        "5 x 2 = n * 2"
+       ],
+       "answer": 0,
+       "explain": "Each {} is replaced with its value: n is 5 and n * 2 is 10.",
+       "hint": "Work out what is inside each pair of braces.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "n = 5\nprint(\"{n} apples\")",
+       "options": [
+        "{n} apples",
+        "5 apples",
+        "n apples",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "There is no f before the quotes, so the braces are just ordinary text.",
+       "hint": "Look closely at the start of the string.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Why does print(\"Age: \" + 19) fail?",
+       "options": [
+        "+ cannot join a string and an int",
+        "print() cannot show numbers",
+        "19 must be written 19.0",
+        "There must be a comma inside the quotes"
+       ],
+       "answer": 0,
+       "explain": "Use a comma, str(19) or an f-string such as f\"Age: {19}\".",
+       "hint": "Look at the types on each side of the +.",
+       "mono": false,
+       "code": "print(\"Age: \" + 19)",
+       "error": "TypeError"
+      },
+      {
+       "type": "fill",
+       "q": "Complete the f-string so it prints: I live in Leeds",
+       "code": "city = \"Leeds\"\nprint(___\"I live in {___}\")",
+       "answers": [
+        "f",
+        "city"
+       ],
+       "distractors": [
+        "s",
+        "\"city\"",
+        "{city}"
+       ],
+       "expect": "I live in Leeds",
+       "explain": "The f goes before the quote, and the variable name goes inside the braces without quotes.",
+       "hint": "Which letter makes an f-string?"
+      },
+      {
+       "type": "code",
+       "q": "Using the two variables given, print: A pen costs 2 pounds",
+       "starter": "item = \"pen\"\nprice = 2\n",
+       "tests": [
+        {
+         "expected": "A pen costs 2 pounds"
+        }
+       ],
+       "solution": "item = \"pen\"\nprice = 2\nprint(f\"A {item} costs {price} pounds\")",
+       "hint": "Try print(f\"A {item} costs ... pounds\").",
+       "explain": "The f-string drops both values into the sentence."
+      }
+     ]
+    },
+    {
+     "id": "u1l6",
+     "title": "input() and converting",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Asking the user",
+       "text": "`input()` pauses the program until the user types something and presses Enter. Whatever they type comes back as a string. The message in the brackets tells them what to type.",
+       "code": "name = input(\"What is your name? \")\nprint(f\"Hello, {name}!\")",
+       "out": "What is your name? Sam\nHello, Sam!",
+       "stdin": [
+        "Sam"
+       ],
+       "note": "The user typed Sam."
+      },
+      {
+       "type": "card",
+       "title": "input() always gives text",
+       "text": "Even if the user types 5, you get the string `\"5\"`. Adding two strings joins them, which is why this prints 53, not 8.",
+       "code": "a = input(\"First: \")\nb = input(\"Second: \")\nprint(a + b)",
+       "out": "First: 5\nSecond: 3\n53",
+       "stdin": [
+        "5",
+        "3"
+       ],
+       "note": "The user typed 5, then 3."
+      },
+      {
+       "type": "card",
+       "title": "Converting with int() and float()",
+       "text": "Wrap `input()` in `int()` for whole numbers or `float()` for decimals. Now `+` does real maths.",
+       "code": "a = int(input(\"First: \"))\nb = int(input(\"Second: \"))\nprint(a + b)",
+       "out": "First: 5\nSecond: 3\n8",
+       "stdin": [
+        "5",
+        "3"
+       ],
+       "note": "The user typed 5, then 3."
+      },
+      {
+       "type": "mcq",
+       "q": "The user types 4. What type does input() give back?",
+       "options": [
+        "str",
+        "int",
+        "float",
+        "bool"
+       ],
+       "answer": 0,
+       "explain": "input() always returns a string, whatever the user types.",
+       "hint": "It is always the same type.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = \"2\"\ny = \"3\"\nprint(x + y)",
+       "options": [
+        "23",
+        "5",
+        "2 3",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "Both are strings because of the quotes, so + joins them.",
+       "hint": "Look at the quotes.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What happens with int(\"3.5\")?",
+       "options": [
+        "A ValueError",
+        "It gives 3",
+        "It gives 4",
+        "It gives 3.5"
+       ],
+       "answer": 0,
+       "explain": "int() only converts text that looks like a whole number. Use float() for decimals.",
+       "hint": "int() is fussy about the text it gets.",
+       "mono": false,
+       "code": "print(int(\"3.5\"))",
+       "error": "ValueError"
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so the program can add 1 to the age",
+       "code": "age = ___(input(\"Age: \"))\nprint(age + 1)",
+       "answers": [
+        "int"
+       ],
+       "distractors": [
+        "str",
+        "print",
+        "input"
+       ],
+       "expect": "19",
+       "explain": "int() turns the typed text into a whole number, so + 1 does maths.",
+       "hint": "You need a whole number.",
+       "stdin": [
+        "18"
+       ]
+      },
+      {
+       "type": "order",
+       "q": "Order the lines: ask for a number, convert it, then print double",
+       "lines": [
+        "num = input(\"Number: \")",
+        "num = int(num)",
+        "print(num * 2)"
+       ],
+       "expect": "12",
+       "explain": "You must have the text before you can convert it, and convert it before doing maths.",
+       "hint": "What must exist before int() can convert it?",
+       "stdin": [
+        "6"
+       ]
+      },
+      {
+       "type": "code",
+       "q": "Ask for two whole numbers and print their sum. Print only the sum.",
+       "starter": "# Ask for two numbers, then print the sum\n",
+       "tests": [
+        {
+         "expected": "9",
+         "stdin": [
+          "4",
+          "5"
+         ]
+        },
+        {
+         "expected": "7",
+         "stdin": [
+          "10",
+          "-3"
+         ]
+        }
+       ],
+       "solution": "a = int(input(\"First number: \"))\nb = int(input(\"Second number: \"))\nprint(a + b)",
+       "hint": "Use int(input()) twice, store each in a variable, then print a + b.",
+       "explain": "Converting with int() means + adds the numbers instead of joining them."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a name and print: Hello, NAME! (for example Hello, Ava!)",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Hello, Ava!",
+         "stdin": [
+          "Ava"
+         ]
+        },
+        {
+         "expected": "Hello, Jo!",
+         "stdin": [
+          "Jo"
+         ]
+        }
+       ],
+       "solution": "name = input(\"Name: \")\nprint(f\"Hello, {name}!\")",
+       "hint": "Store input() in a variable, then use an f-string: f\"Hello, {name}!\"",
+       "explain": "The f-string puts the name between Hello, and the !."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u2",
+   "week": "Week 2",
+   "title": "Making decisions",
+   "blurb": "comparisons, if, elif, else, and, or, not",
+   "status": "complete",
+   "lessons": [
+    {
+     "id": "u2l1",
+     "title": "Comparing values",
+     "steps": [
+      {
+       "type": "card",
+       "title": "True-or-false questions",
+       "text": "Comparison operators compare two values and give `True` or `False`. `==` means 'is equal to' and `!=` means 'is not equal to'. A single `=` stores a value, it does not compare.",
+       "code": "print(5 == 5)\nprint(5 == 3)\nprint(5 != 3)",
+       "out": "True\nFalse\nTrue"
+      },
+      {
+       "type": "card",
+       "title": "Bigger and smaller",
+       "text": "`<` less than, `>` greater than, `<=` less than or equal to, `>=` greater than or equal to. Strings can be compared with `==` too, but capital letters count.",
+       "code": "age = 18\nprint(age >= 18)\nprint(age < 18)\nprint(\"Cat\" == \"cat\")",
+       "out": "True\nFalse\nFalse"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(10 > 3)",
+       "options": [
+        "True",
+        "False",
+        "10",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "10 is greater than 3, so the comparison is True.",
+       "hint": "Is 10 bigger than 3?",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(4 <= 4)",
+       "options": [
+        "True",
+        "False",
+        "Error",
+        "4"
+       ],
+       "answer": 0,
+       "explain": "<= means less than OR equal to, and 4 equals 4.",
+       "hint": "Read <= as 'less than or equal to'.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which checks whether x is equal to 10?",
+       "options": [
+        "x == 10",
+        "x = 10",
+        "x === 10",
+        "x equals 10"
+       ],
+       "answer": 0,
+       "explain": "== compares. = stores a value. === does not exist in Python.",
+       "hint": "Comparing needs two symbols.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it prints True",
+       "code": "print(7 ___ 2)",
+       "answers": [
+        ">"
+       ],
+       "distractors": [
+        "<",
+        "==",
+        "<="
+       ],
+       "expect": "True",
+       "explain": "7 > 2 is True. The others are all False for 7 and 2.",
+       "hint": "7 is the bigger number."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a whole number. Print True if it is greater than 100, otherwise False.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "True",
+         "stdin": [
+          "150"
+         ]
+        },
+        {
+         "expected": "False",
+         "stdin": [
+          "50"
+         ]
+        },
+        {
+         "expected": "False",
+         "stdin": [
+          "100"
+         ]
+        }
+       ],
+       "solution": "n = int(input(\"Number: \"))\nprint(n > 100)",
+       "hint": "Convert with int(), then print the comparison n > 100.",
+       "explain": "A comparison gives True or False, so you can print it directly."
+      }
+     ]
+    },
+    {
+     "id": "u2l2",
+     "title": "if and else",
+     "steps": [
+      {
+       "type": "card",
+       "title": "if runs code only when something is True",
+       "text": "An `if` line ends with a colon. The lines under it are indented by 4 spaces and only run when the condition is True. The indentation is how Python knows what belongs to the `if`.",
+       "code": "temp = 25\nif temp > 20:\n    print(\"It is warm\")\nprint(\"Done\")",
+       "out": "It is warm\nDone"
+      },
+      {
+       "type": "card",
+       "title": "else covers everything else",
+       "text": "`else` runs when the `if` condition is False. It has no condition of its own, just a colon.",
+       "code": "temp = 12\nif temp > 20:\n    print(\"Shorts\")\nelse:\n    print(\"Jacket\")",
+       "out": "Jacket"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = 3\nif x > 5:\n    print(\"big\")\nelse:\n    print(\"small\")",
+       "options": [
+        "small",
+        "big",
+        "big\nsmall",
+        "Nothing"
+       ],
+       "answer": 0,
+       "explain": "3 > 5 is False, so the else branch runs.",
+       "hint": "Is 3 greater than 5?",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = 10\nif x > 5:\n    print(\"A\")\nprint(\"B\")",
+       "options": [
+        "A\nB",
+        "A",
+        "B",
+        "Nothing"
+       ],
+       "answer": 0,
+       "explain": "print(\"B\") is not indented, so it runs whatever happens.",
+       "hint": "Which line is outside the if?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What is wrong with this code?",
+       "options": [
+        "It needs a colon after 50, and print must be indented",
+        "score needs brackets",
+        "50 needs quotes",
+        "Nothing, it works"
+       ],
+       "answer": 0,
+       "explain": "Every if line ends with a colon, and the code inside it is indented by 4 spaces.",
+       "hint": "Compare it with the examples above.",
+       "mono": false,
+       "code": "score = 70\nif score > 50 print(\"Pass\")",
+       "error": "SyntaxError"
+      },
+      {
+       "type": "order",
+       "q": "Build it: age is 20, so the program should print Adult",
+       "lines": [
+        "age = 20",
+        "if age >= 18:",
+        "    print(\"Adult\")",
+        "else:",
+        "    print(\"Child\")"
+       ],
+       "expect": "Adult",
+       "explain": "The variable is set first, then the if, its indented line, the else, and its indented line.",
+       "hint": "if comes before else."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a password. If it is swordfish, print Access granted. Otherwise print Access denied.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Access granted",
+         "stdin": [
+          "swordfish"
+         ]
+        },
+        {
+         "expected": "Access denied",
+         "stdin": [
+          "fish"
+         ]
+        },
+        {
+         "expected": "Access denied",
+         "stdin": [
+          "Swordfish"
+         ]
+        }
+       ],
+       "solution": "pw = input(\"Password: \")\nif pw == \"swordfish\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
+       "hint": "Compare with == \"swordfish\", then use if and else.",
+       "explain": "== checks the exact text, including capitals."
+      }
+     ]
+    },
+    {
+     "id": "u2l3",
+     "title": "elif: more than two choices",
+     "steps": [
+      {
+       "type": "card",
+       "title": "elif means 'else if'",
+       "text": "`elif` adds another condition. Python checks each condition from the top and runs only the first one that is True, then skips the rest. `else` catches anything left over.",
+       "code": "mark = 65\nif mark >= 70:\n    print(\"First\")\nelif mark >= 60:\n    print(\"2:1\")\nelif mark >= 50:\n    print(\"2:2\")\nelse:\n    print(\"Keep going\")",
+       "out": "2:1"
+      },
+      {
+       "type": "card",
+       "title": "Order matters",
+       "text": "Because only the first True branch runs, put the strictest check first. Here 85 stops at the first test, so Distinction is never reached.",
+       "code": "mark = 85\nif mark >= 50:\n    print(\"Pass\")\nelif mark >= 70:\n    print(\"Distinction\")",
+       "out": "Pass"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "n = 0\nif n > 0:\n    print(\"positive\")\nelif n < 0:\n    print(\"negative\")\nelse:\n    print(\"zero\")",
+       "options": [
+        "zero",
+        "positive",
+        "negative",
+        "positive\nzero"
+       ],
+       "answer": 0,
+       "explain": "0 is neither greater nor less than 0, so else runs.",
+       "hint": "Check each condition in turn.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "When do you use elif?",
+       "options": [
+        "To check another condition when the ones above were False",
+        "To repeat code several times",
+        "Only inside loops",
+        "To end the program"
+       ],
+       "answer": 0,
+       "explain": "elif is part of a decision, not a loop. Loops (for, while) are what repeat code.",
+       "hint": "It is short for 'else if'.",
+       "mono": false
+      },
+      {
+       "type": "mcq",
+       "q": "In one if / elif / else chain, how many branches run?",
+       "options": [
+        "Exactly one",
+        "Every branch that is True",
+        "Always two",
+        "One for each elif"
+       ],
+       "answer": 0,
+       "explain": "Python stops at the first True branch. If none are True, else runs, so exactly one runs.",
+       "hint": "Python stops looking once it finds a True condition.",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Complete the chain so the program prints only Too fast",
+       "code": "speed = 80\nif speed > 70:\n    print(\"Too fast\")\n___ speed > 30:\n    print(\"OK\")\n___:\n    print(\"Too slow\")",
+       "answers": [
+        "elif",
+        "else"
+       ],
+       "distractors": [
+        "if",
+        "then",
+        "elseif"
+       ],
+       "expect": "Too fast",
+       "explain": "With elif, the chain stops after Too fast. A second if would also print OK.",
+       "hint": "One keyword takes a condition, the other does not."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a temperature (whole number). Print Hot if it is over 25, Mild if it is 15 to 25, and Cold if it is under 15.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Hot",
+         "stdin": [
+          "30"
+         ]
+        },
+        {
+         "expected": "Mild",
+         "stdin": [
+          "25"
+         ]
+        },
+        {
+         "expected": "Mild",
+         "stdin": [
+          "15"
+         ]
+        },
+        {
+         "expected": "Cold",
+         "stdin": [
+          "14"
+         ]
+        }
+       ],
+       "solution": "t = int(input(\"Temperature: \"))\nif t > 25:\n    print(\"Hot\")\nelif t >= 15:\n    print(\"Mild\")\nelse:\n    print(\"Cold\")",
+       "hint": "Check > 25 first, then >= 15 with elif, then else.",
+       "explain": "Checking the highest band first means each elif only needs one comparison."
+      }
+     ]
+    },
+    {
+     "id": "u2l4",
+     "title": "and, or, not",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Combining conditions",
+       "text": "`and` is True only when both sides are True. `or` is True when at least one side is True. `not` flips True to False and False to True.",
+       "code": "age = 20\nhas_ticket = True\nprint(age >= 18 and has_ticket)\nprint(age < 12 or has_ticket)\nprint(not has_ticket)",
+       "out": "True\nTrue\nFalse"
+      },
+      {
+       "type": "card",
+       "title": "Using them in an if",
+       "text": "Write the full comparison on each side: `hour >= 9 and hour < 17`. Writing `hour >= 9 and < 17` is a syntax error.",
+       "code": "hour = 14\nif hour >= 9 and hour < 17:\n    print(\"Open\")\nelse:\n    print(\"Closed\")",
+       "out": "Open"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(True and False)",
+       "options": [
+        "False",
+        "True",
+        "Error",
+        "None"
+       ],
+       "answer": 0,
+       "explain": "and needs both sides to be True.",
+       "hint": "Are both sides True?",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(False or True)",
+       "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+       ],
+       "answer": 0,
+       "explain": "or needs only one side to be True.",
+       "hint": "Is at least one side True?",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = 5\nprint(x > 1 and x < 3)",
+       "options": [
+        "False",
+        "True",
+        "5",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "5 > 1 is True but 5 < 3 is False, so and gives False.",
+       "hint": "Check each side separately.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which checks that x is between 1 and 10, including both?",
+       "options": [
+        "x >= 1 and x <= 10",
+        "x >= 1 or x <= 10",
+        "x >= 1 and <= 10",
+        "1 <= x or 10"
+       ],
+       "answer": 0,
+       "explain": "Both conditions must be True, so use and, with x written on each side.",
+       "hint": "Both conditions must be True at once.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so Sunday prints Weekend",
+       "code": "day = \"Sunday\"\nif day == \"Saturday\" ___ day == \"Sunday\":\n    print(\"Weekend\")",
+       "answers": [
+        "or"
+       ],
+       "distractors": [
+        "and",
+        "not",
+        "nor"
+       ],
+       "expect": "Weekend",
+       "explain": "The day only needs to match one of them, so use or.",
+       "hint": "Can the day be Saturday and Sunday at the same time?"
+      },
+      {
+       "type": "code",
+       "q": "Ask for a whole number. Print Valid if it is between 1 and 100 (including both), otherwise print Invalid.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Valid",
+         "stdin": [
+          "1"
+         ]
+        },
+        {
+         "expected": "Valid",
+         "stdin": [
+          "100"
+         ]
+        },
+        {
+         "expected": "Valid",
+         "stdin": [
+          "50"
+         ]
+        },
+        {
+         "expected": "Invalid",
+         "stdin": [
+          "0"
+         ]
+        },
+        {
+         "expected": "Invalid",
+         "stdin": [
+          "101"
+         ]
+        }
+       ],
+       "solution": "n = int(input(\"Number: \"))\nif n >= 1 and n <= 100:\n    print(\"Valid\")\nelse:\n    print(\"Invalid\")",
+       "hint": "Use n >= 1 and n <= 100 as the condition.",
+       "explain": "and makes sure both limits are checked."
+      }
+     ]
+    },
+    {
+     "id": "u2l5",
+     "title": "Decisions with user input",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Ignoring capitals with .lower()",
+       "text": "Users type in all sorts of ways: YES, Yes, yes. `.lower()` turns a string into lower case, so one comparison covers them all.",
+       "code": "answer = input(\"Continue? \")\nif answer.lower() == \"yes\":\n    print(\"Carrying on\")\nelse:\n    print(\"Stopping\")",
+       "out": "Continue? YES\nCarrying on",
+       "stdin": [
+        "YES"
+       ],
+       "note": "The user typed YES."
+      },
+      {
+       "type": "card",
+       "title": "Convert first, then compare",
+       "text": "`input()` gives a string, and comparing a string with a number using `>` is an error. Convert with `int()` first. `n % 2 == 0` is a common way to test for an even number.",
+       "code": "n = int(input(\"Number: \"))\nif n % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+       "out": "Number: 7\nOdd",
+       "stdin": [
+        "7"
+       ],
+       "note": "The user typed 7."
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "word = \"PyThOn\"\nprint(word.lower())",
+       "options": [
+        "python",
+        "PYTHON",
+        "PyThOn",
+        "Python"
+       ],
+       "answer": 0,
+       "explain": ".lower() makes every letter lower case.",
+       "hint": "What does lower mean?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What does print(\"7\" > 5) do?",
+       "options": [
+        "Raises a TypeError",
+        "Prints True",
+        "Prints False",
+        "Converts 7 for you"
+       ],
+       "answer": 0,
+       "explain": "Python will not compare a string with a number using >. Convert with int() first.",
+       "hint": "One side is text, the other a number.",
+       "mono": false,
+       "code": "print(\"7\" > 5)",
+       "error": "TypeError"
+      },
+      {
+       "type": "order",
+       "q": "Order the lines so the program prints Even for 4",
+       "lines": [
+        "n = int(input())",
+        "if n % 2 == 0:",
+        "    print(\"Even\")",
+        "else:",
+        "    print(\"Odd\")"
+       ],
+       "expect": "Even",
+       "explain": "Get the number, test it, then the two branches.",
+       "hint": "Start by getting the number.",
+       "stdin": [
+        "4"
+       ]
+      },
+      {
+       "type": "code",
+       "q": "Ask for a colour. Print Stop for red, Go for green, and Wait for anything else. Capitals should not matter.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Stop",
+         "stdin": [
+          "RED"
+         ]
+        },
+        {
+         "expected": "Go",
+         "stdin": [
+          "green"
+         ]
+        },
+        {
+         "expected": "Go",
+         "stdin": [
+          "Green"
+         ]
+        },
+        {
+         "expected": "Wait",
+         "stdin": [
+          "Blue"
+         ]
+        }
+       ],
+       "solution": "c = input(\"Colour: \").lower()\nif c == \"red\":\n    print(\"Stop\")\nelif c == \"green\":\n    print(\"Go\")\nelse:\n    print(\"Wait\")",
+       "hint": "Use .lower() on the input, then if / elif / else comparing with \"red\" and \"green\".",
+       "explain": ".lower() means RED, Red and red all match."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u3",
+   "week": "Week 3",
+   "title": "Loops",
+   "blurb": "for, range(), while, break, continue",
+   "status": "complete",
+   "lessons": [
+    {
+     "id": "u3l1",
+     "title": "for loops",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Repeating with for",
+       "text": "A `for` loop runs its indented code once for each item. The loop variable takes each item's value in turn. Like `if`, the line ends with a colon.",
+       "code": "for colour in [\"red\", \"green\", \"blue\"]:\n    print(colour)",
+       "out": "red\ngreen\nblue"
+      },
+      {
+       "type": "card",
+       "title": "Looping over a string",
+       "text": "A string is a sequence of characters, so a `for` loop goes through it one character at a time.",
+       "code": "for letter in \"Hi!\":\n    print(letter)",
+       "out": "H\ni\n!"
+      },
+      {
+       "type": "card",
+       "title": "Inside or outside the loop",
+       "text": "Only the indented lines repeat. A line with no indent after the loop runs once, when the loop has finished.",
+       "code": "for n in [1, 2, 3]:\n    print(n)\nprint(\"Finished\")",
+       "out": "1\n2\n3\nFinished"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "for x in [\"a\", \"b\"]:\n    print(x)\n    print(\"-\")",
+       "options": [
+        "a\n-\nb\n-",
+        "a\nb\n-",
+        "a\nb\n-\n-",
+        "-\na\n-\nb"
+       ],
+       "answer": 0,
+       "explain": "Both prints are indented, so both run in every round.",
+       "hint": "Both lines are inside the loop.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "for ch in \"cat\":\n    print(ch.upper())",
+       "options": [
+        "C\nA\nT",
+        "CAT",
+        "cat",
+        "C A T"
+       ],
+       "answer": 0,
+       "explain": "The loop handles one character per round, and each print starts a new line.",
+       "hint": "How many times does print run?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "How many times does the loop body run?",
+       "options": [
+        "4",
+        "20",
+        "5",
+        "3"
+       ],
+       "answer": 0,
+       "explain": "There are four items in the list, so four rounds.",
+       "hint": "Count the items.",
+       "mono": false,
+       "code": "for x in [5, 10, 15, 20]:\n    print(x)"
+      },
+      {
+       "type": "fill",
+       "q": "Complete the loop so it prints each name",
+       "code": "names = [\"Ana\", \"Ben\"]\n___ name ___ names:\n    print(name)",
+       "answers": [
+        "for",
+        "in"
+       ],
+       "distractors": [
+        "while",
+        "of",
+        "each"
+       ],
+       "expect": "Ana\nBen",
+       "explain": "The pattern is: for item in collection:",
+       "hint": "It reads like English: for each name in names."
+      },
+      {
+       "type": "code",
+       "q": "Print each snack on its own line using a for loop.",
+       "starter": "snacks = [\"crisps\", \"apple\", \"toast\"]\n",
+       "tests": [
+        {
+         "expected": "crisps\napple\ntoast"
+        }
+       ],
+       "solution": "snacks = [\"crisps\", \"apple\", \"toast\"]\nfor s in snacks:\n    print(s)",
+       "hint": "for s in snacks: then print(s) indented underneath.",
+       "explain": "The loop gives you each item in turn.",
+       "require": [
+        {
+         "text": "for ",
+         "msg": "Use a for loop."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l2",
+     "title": "range()",
+     "steps": [
+      {
+       "type": "card",
+       "title": "range() makes numbers",
+       "text": "`range(5)` gives 0, 1, 2, 3, 4. It starts at 0 and stops before the number you give. Use it to repeat something a set number of times.",
+       "code": "for i in range(3):\n    print(\"Lap\", i)",
+       "out": "Lap 0\nLap 1\nLap 2"
+      },
+      {
+       "type": "card",
+       "title": "Start, stop and step",
+       "text": "`range(start, stop)` starts somewhere other than 0. A third number sets the step, and a negative step counts down. The stop number is never included.",
+       "code": "print(list(range(1, 6)))\nprint(list(range(0, 10, 2)))\nprint(list(range(5, 0, -1)))",
+       "out": "[1, 2, 3, 4, 5]\n[0, 2, 4, 6, 8]\n[5, 4, 3, 2, 1]"
+      },
+      {
+       "type": "card",
+       "title": "Adding up in a loop",
+       "text": "Set a total to 0 before the loop, add to it inside, and print it after the loop so it shows once. `total += n` is short for `total = total + n`.",
+       "code": "total = 0\nfor n in range(1, 5):\n    total += n\nprint(total)",
+       "out": "10"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "for i in range(2, 5):\n    print(i)",
+       "options": [
+        "2\n3\n4",
+        "2\n3\n4\n5",
+        "3\n4\n5",
+        "0\n1\n2\n3\n4"
+       ],
+       "answer": 0,
+       "explain": "It starts at 2 and stops before 5.",
+       "hint": "The stop number is not included.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which gives the numbers 1 to 10?",
+       "options": [
+        "range(1, 11)",
+        "range(10)",
+        "range(1, 10)",
+        "range(0, 10)"
+       ],
+       "answer": 0,
+       "explain": "The stop value is not included, so to reach 10 you stop at 11.",
+       "hint": "The stop number is left out.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "total = 0\nfor n in range(4):\n    total += n\nprint(total)",
+       "options": [
+        "6",
+        "10",
+        "4",
+        "0"
+       ],
+       "answer": 0,
+       "explain": "range(4) is 0, 1, 2, 3, and 0 + 1 + 2 + 3 = 6.",
+       "hint": "List the numbers range(4) gives first.",
+       "mono": true
+      },
+      {
+       "type": "order",
+       "q": "Order the lines so the total of 1 to 3 is printed once",
+       "lines": [
+        "total = 0",
+        "for n in range(1, 4):",
+        "    total += n",
+        "print(total)"
+       ],
+       "expect": "6",
+       "explain": "Set the total first, add inside the loop, print after the loop.",
+       "hint": "The total must exist before the loop."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a whole number n and print the numbers 1 to n, one per line.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "1\n2\n3",
+         "stdin": [
+          "3"
+         ]
+        },
+        {
+         "expected": "1",
+         "stdin": [
+          "1"
+         ]
+        },
+        {
+         "expected": "1\n2\n3\n4\n5",
+         "stdin": [
+          "5"
+         ]
+        }
+       ],
+       "solution": "n = int(input(\"n: \"))\nfor i in range(1, n + 1):\n    print(i)",
+       "hint": "range(1, n + 1) includes n.",
+       "explain": "Adding 1 to the stop value makes sure n itself is included."
+      }
+     ]
+    },
+    {
+     "id": "u3l3",
+     "title": "while loops",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Loop while something is True",
+       "text": "A `while` loop keeps repeating as long as its condition is True. Use it when you do not know in advance how many rounds you need.",
+       "code": "count = 3\nwhile count > 0:\n    print(count)\n    count -= 1\nprint(\"Lift off\")",
+       "out": "3\n2\n1\nLift off"
+      },
+      {
+       "type": "card",
+       "title": "Avoid infinite loops",
+       "text": "Something inside the loop must change so the condition eventually becomes False. If nothing changes, the loop never ends. In this app, code that runs too long is stopped for you.",
+       "code": "n = 1\nwhile n < 50:\n    n = n * 2\nprint(n)",
+       "out": "64"
+      },
+      {
+       "type": "card",
+       "title": "Ask until the answer is right",
+       "text": "A common pattern is to keep asking until the user types what you need.",
+       "code": "guess = \"\"\nwhile guess != \"python\":\n    guess = input(\"Password: \")\nprint(\"Welcome\")",
+       "out": "Password: java\nPassword: python\nWelcome",
+       "stdin": [
+        "java",
+        "python"
+       ],
+       "note": "The user typed java, then python."
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "i = 0\nwhile i < 3:\n    print(i)\n    i += 1",
+       "options": [
+        "0\n1\n2",
+        "1\n2\n3",
+        "0\n1\n2\n3",
+        "0"
+       ],
+       "answer": 0,
+       "explain": "It prints 0, 1 and 2. When i becomes 3, i < 3 is False and the loop stops.",
+       "hint": "Check the condition before each round.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What is wrong with this code?",
+       "options": [
+        "x never changes, so it loops forever",
+        "It prints nothing",
+        "while needs brackets",
+        "It prints 1 to 5"
+       ],
+       "answer": 0,
+       "explain": "Nothing inside the loop changes x, so x < 5 stays True for ever. Adding x += 1 fixes it.",
+       "hint": "What would make the loop stop?",
+       "mono": false,
+       "code": "x = 1\nwhile x < 5:\n    print(x)"
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it prints 10, 6 and 2",
+       "code": "n = 10\n___ n > 0:\n    print(n)\n    n ___ 4",
+       "answers": [
+        "while",
+        "-="
+       ],
+       "distractors": [
+        "for",
+        "if",
+        "+=",
+        "="
+       ],
+       "expect": "10\n6\n2",
+       "explain": "while repeats while n > 0, and n -= 4 makes n smaller each round.",
+       "hint": "The numbers go down by 4 each time."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a whole number and count down to 1 with a while loop, then print Go.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "3\n2\n1\nGo",
+         "stdin": [
+          "3"
+         ]
+        },
+        {
+         "expected": "1\nGo",
+         "stdin": [
+          "1"
+         ]
+        }
+       ],
+       "solution": "n = int(input(\"Start: \"))\nwhile n > 0:\n    print(n)\n    n -= 1\nprint(\"Go\")",
+       "hint": "while n > 0: print n, then n -= 1. Print Go after the loop, not indented.",
+       "explain": "The loop ends once n reaches 0.",
+       "require": [
+        {
+         "text": "while",
+         "msg": "Use a while loop for this one."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u3l4",
+     "title": "break and continue",
+     "steps": [
+      {
+       "type": "card",
+       "title": "break stops the loop",
+       "text": "`break` ends the loop straight away, even if there are items left. The code after the loop then carries on.",
+       "code": "for n in range(1, 10):\n    if n == 4:\n        break\n    print(n)\nprint(\"Stopped\")",
+       "out": "1\n2\n3\nStopped"
+      },
+      {
+       "type": "card",
+       "title": "continue skips one round",
+       "text": "`continue` skips the rest of the current round and jumps to the next one. The loop itself keeps going.",
+       "code": "for n in range(1, 6):\n    if n == 3:\n        continue\n    print(n)",
+       "out": "1\n2\n4\n5"
+      },
+      {
+       "type": "card",
+       "title": "while True with break",
+       "text": "`while True` loops for ever on purpose, and `break` is the way out. It is a tidy pattern for menus and repeated questions.",
+       "code": "while True:\n    cmd = input(\"> \")\n    if cmd == \"quit\":\n        break\n    print(\"You typed\", cmd)",
+       "out": "> hello\nYou typed hello\n> quit",
+       "stdin": [
+        "hello",
+        "quit"
+       ],
+       "note": "The user typed hello, then quit."
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "for ch in \"python\":\n    if ch == \"h\":\n        break\n    print(ch)",
+       "options": [
+        "p\ny\nt",
+        "p\ny\nt\nh",
+        "p\ny\nt\no\nn",
+        "h"
+       ],
+       "answer": 0,
+       "explain": "The loop stops when it reaches h, before printing it.",
+       "hint": "break happens before the print.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "for n in range(5):\n    if n % 2 == 0:\n        continue\n    print(n)",
+       "options": [
+        "1\n3",
+        "0\n2\n4",
+        "0\n1\n2\n3\n4",
+        "1\n3\n5"
+       ],
+       "answer": 0,
+       "explain": "Even numbers are skipped by continue, leaving 1 and 3.",
+       "hint": "Which numbers make n % 2 == 0 True?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which keyword skips only the current round of a loop?",
+       "options": [
+        "continue",
+        "break",
+        "pass",
+        "return"
+       ],
+       "answer": 0,
+       "explain": "continue moves on to the next round. break leaves the loop completely.",
+       "hint": "One skips, one stops.",
+       "mono": true
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it stops at the first negative number",
+       "code": "for n in [3, 8, -1, 5]:\n    if n < 0:\n        ___\n    print(n)",
+       "answers": [
+        "break"
+       ],
+       "distractors": [
+        "continue",
+        "stop",
+        "exit"
+       ],
+       "expect": "3\n8",
+       "explain": "break ends the loop at -1, so 5 is never reached. continue would still print 5.",
+       "hint": "You want to leave the loop completely."
+      },
+      {
+       "type": "code",
+       "q": "Keep asking for words until the user types stop. Then print how many words were typed, not counting stop.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "2",
+         "stdin": [
+          "apple",
+          "pear",
+          "stop"
+         ]
+        },
+        {
+         "expected": "0",
+         "stdin": [
+          "stop"
+         ]
+        },
+        {
+         "expected": "3",
+         "stdin": [
+          "a",
+          "b",
+          "c",
+          "stop"
+         ]
+        }
+       ],
+       "solution": "count = 0\nwhile True:\n    word = input(\"Word: \")\n    if word == \"stop\":\n        break\n    count += 1\nprint(count)",
+       "hint": "Use while True, break when the word is stop, otherwise add 1 to a counter. Print after the loop.",
+       "explain": "The counter only goes up for words that are not stop."
+      }
+     ]
+    },
+    {
+     "id": "u3l5",
+     "title": "Loop patterns",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Counting matches",
+       "text": "To count something, start a counter at 0 and add 1 each time a condition is True.",
+       "code": "word = \"banana\"\ncount = 0\nfor ch in word:\n    if ch == \"a\":\n        count += 1\nprint(count)",
+       "out": "3"
+      },
+      {
+       "type": "card",
+       "title": "Finding the biggest",
+       "text": "Keep the best value so far in a variable. Compare each item with it, and replace it when you find a bigger one.",
+       "code": "nums = [4, 9, 2, 7]\nbiggest = nums[0]\nfor n in nums:\n    if n > biggest:\n        biggest = n\nprint(biggest)",
+       "out": "9"
+      },
+      {
+       "type": "card",
+       "title": "Numbering with enumerate()",
+       "text": "`enumerate()` gives you a position and the item in each round. `start=1` makes the counting begin at 1, which reads better for people.",
+       "code": "for i, task in enumerate([\"read\", \"code\", \"rest\"], start=1):\n    print(f\"{i}. {task}\")",
+       "out": "1. read\n2. code\n3. rest"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "count = 0\nfor n in range(10):\n    if n > 6:\n        count += 1\nprint(count)",
+       "options": [
+        "3",
+        "4",
+        "6",
+        "10"
+       ],
+       "answer": 0,
+       "explain": "range(10) goes up to 9, and 7, 8 and 9 are greater than 6.",
+       "hint": "Which numbers from 0 to 9 are over 6?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "To add up a list of numbers, where should total = 0 go?",
+       "options": [
+        "Before the loop",
+        "Inside the loop",
+        "After the loop",
+        "It is not needed"
+       ],
+       "answer": 0,
+       "explain": "Inside the loop it would reset to 0 every round.",
+       "hint": "What happens if it is reset every round?",
+       "mono": false
+      },
+      {
+       "type": "order",
+       "q": "Order the lines to print the 3 times table from 1 to 3",
+       "lines": [
+        "n = 3",
+        "for i in range(1, 4):",
+        "    print(f\"{n} x {i} = {n * i}\")"
+       ],
+       "expect": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9",
+       "explain": "Set n, start the loop, then print inside it.",
+       "hint": "n must exist before the loop uses it."
+      },
+      {
+       "type": "code",
+       "q": "Ask for a whole number and print its times table from 1 to 5, like: 4 x 1 = 4",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20",
+         "stdin": [
+          "4"
+         ]
+        },
+        {
+         "expected": "7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35",
+         "stdin": [
+          "7"
+         ]
+        }
+       ],
+       "solution": "n = int(input(\"Number: \"))\nfor i in range(1, 6):\n    print(f\"{n} x {i} = {n * i}\")",
+       "hint": "Loop i over range(1, 6) and print an f-string such as f\"{n} x {i} = {n * i}\".",
+       "explain": "range(1, 6) gives 1 to 5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4",
+   "week": "Week 4",
+   "title": "Functions",
+   "blurb": "def, parameters, return, scope",
+   "status": "partial",
+   "lessons": [
+    {
+     "id": "u4l1",
+     "title": "Defining a function",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Make your own command",
+       "text": "`def` creates a function: a named block of code you can run whenever you like. Defining it does not run it. You run it by calling its name with brackets.",
+       "code": "def greet():\n    print(\"Hello!\")\n    print(\"Welcome to PyLearn\")\n\ngreet()\ngreet()",
+       "out": "Hello!\nWelcome to PyLearn\nHello!\nWelcome to PyLearn"
+      },
+      {
+       "type": "card",
+       "title": "Why bother?",
+       "text": "Functions stop you repeating yourself. To change the output, you change it in one place. They also split a long program into clear, named parts.",
+       "code": "def line():\n    print(\"-\" * 10)\n\nline()\nprint(\"Menu\")\nline()",
+       "out": "----------\nMenu\n----------"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "def say():\n    print(\"A\")\n\nprint(\"B\")\nsay()",
+       "options": [
+        "B\nA",
+        "A\nB",
+        "B",
+        "A"
+       ],
+       "answer": 0,
+       "explain": "Defining say() does not run it. B prints first, then the call runs say().",
+       "hint": "When does the code inside a def actually run?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What happens when Python reads a def block?",
+       "options": [
+        "It remembers the function but does not run it yet",
+        "It runs the function straight away",
+        "It prints the function's name",
+        "It shows an error until the function is called"
+       ],
+       "answer": 0,
+       "explain": "The body only runs when you call the function by name.",
+       "hint": "Think about the previous example.",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Complete the definition so the program prints Hi",
+       "code": "___ hello()___\n    print(\"Hi\")\n\nhello()",
+       "answers": [
+        "def",
+        ":"
+       ],
+       "distractors": [
+        "function",
+        ";",
+        "fn"
+       ],
+       "expect": "Hi",
+       "explain": "A function starts with def and the line ends with a colon, just like if and for.",
+       "hint": "Python's keyword is three letters long."
+      },
+      {
+       "type": "code",
+       "q": "Define a function called banner that prints *** PyLearn ***. Then call it twice.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "*** PyLearn ***\n*** PyLearn ***"
+        }
+       ],
+       "solution": "def banner():\n    print(\"*** PyLearn ***\")\n\nbanner()\nbanner()",
+       "hint": "def banner(): with the print indented, then banner() twice with no indent.",
+       "explain": "Calling the function twice runs its body twice.",
+       "require": [
+        {
+         "text": "def banner",
+         "msg": "Define a function called banner."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u4l2",
+     "title": "Parameters and return",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Parameters pass information in",
+       "text": "Names in the brackets of `def` are parameters. When you call the function, the values you give (arguments) fill them in order.",
+       "code": "def greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Ava\")\ngreet(\"Leo\")",
+       "out": "Hello, Ava!\nHello, Leo!"
+      },
+      {
+       "type": "card",
+       "title": "return sends a value back",
+       "text": "`return` hands a result back to the line that called the function. You can store it, print it or use it in a sum. A function with no `return` gives back `None`.",
+       "code": "def add(a, b):\n    return a + b\n\ntotal = add(2, 3)\nprint(total)\nprint(add(10, 5) * 2)",
+       "out": "5\n30"
+      },
+      {
+       "type": "card",
+       "title": "print versus return",
+       "text": "`print` only shows a value on screen. `return` gives the value to your program, so you can keep using it. Most useful functions return.",
+       "code": "def double_print(x):\n    print(x * 2)\n\ndef double_return(x):\n    return x * 2\n\nresult = double_return(4)\nprint(result + 1)\ndouble_print(4)",
+       "out": "9\n8"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "def square(n):\n    return n * n\n\nprint(square(3) + 1)",
+       "options": [
+        "10",
+        "9",
+        "16",
+        "4"
+       ],
+       "answer": 0,
+       "explain": "square(3) returns 9, and 9 + 1 is 10.",
+       "hint": "Work out square(3) first.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "def f():\n    x = 5\n\nprint(f())",
+       "options": [
+        "None",
+        "5",
+        "x",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "f has no return, so it gives back None.",
+       "hint": "Does f return anything?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "In def area(width, height):, what are width and height?",
+       "options": [
+        "Parameters",
+        "Return values",
+        "Global variables",
+        "Strings"
+       ],
+       "answer": 0,
+       "explain": "They are parameters: placeholders filled by the values you pass when calling area().",
+       "hint": "They sit in the brackets of the def line.",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Complete the function so it prints 4.5",
+       "code": "def half(n):\n    ___ n / 2\n\nprint(half(9))",
+       "answers": [
+        "return"
+       ],
+       "distractors": [
+        "print",
+        "give",
+        "="
+       ],
+       "expect": "4.5",
+       "explain": "return passes 4.5 back, so print() can show it. Using print inside would show 4.5 and then None.",
+       "hint": "The value must come back out of the function."
+      },
+      {
+       "type": "order",
+       "q": "Order the lines so the program prints 8",
+       "lines": [
+        "def cube(n):",
+        "    return n ** 3",
+        "print(cube(2))"
+       ],
+       "expect": "8",
+       "explain": "Define the function first, then call it.",
+       "hint": "A function must be defined before it is called."
+      },
+      {
+       "type": "code",
+       "q": "Write a function is_even(n) that returns True if n is even and False otherwise. The checker will call it for you.",
+       "starter": "def is_even(n):\n    # your code here\n    pass\n",
+       "tests": [
+        {
+         "expected": "True\nFalse",
+         "after": "print(is_even(10))\nprint(is_even(3))"
+        },
+        {
+         "expected": "True",
+         "after": "print(is_even(0))"
+        }
+       ],
+       "solution": "def is_even(n):\n    return n % 2 == 0",
+       "hint": "n % 2 == 0 is already True or False, so you can return it directly.",
+       "explain": "Returning the comparison gives True or False to whoever called the function."
+      }
+     ]
+    },
+    {
+     "id": "u4l3",
+     "title": "Scope",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Local variables stay inside",
+       "text": "A variable created inside a function only exists while that function runs. This is called local scope. Code outside the function cannot see it.",
+       "code": "def make():\n    secret = 42\n    print(\"Inside:\", secret)\n\nmake()\nprint(secret)",
+       "out": "Inside: 42",
+       "error": "NameError: name 'secret' is not defined"
+      },
+      {
+       "type": "card",
+       "title": "Values in, values out",
+       "text": "Rather than reaching for variables outside, pass in what a function needs and return what it produces. Each function then stands on its own and is easy to test.",
+       "code": "def add_vat(price):\n    return price * 1.2\n\nprint(add_vat(10))",
+       "out": "12.0"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "x = 1\n\ndef change():\n    x = 99\n\nchange()\nprint(x)",
+       "options": [
+        "1",
+        "99",
+        "None",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "The x inside change() is a new local variable. The x outside is untouched.",
+       "hint": "Is the x inside the function the same as the one outside?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Where can a variable created inside a function be used?",
+       "options": [
+        "Only inside that function",
+        "Anywhere in the program",
+        "Only after the function is called",
+        "In every other function"
+       ],
+       "answer": 0,
+       "explain": "Local variables disappear when the function finishes.",
+       "hint": "Think back to the NameError example.",
+       "mono": false
+      },
+      {
+       "type": "code",
+       "q": "Write a function c_to_f(c) that returns the temperature in Fahrenheit, using c * 9 / 5 + 32. The checker calls it.",
+       "starter": "def c_to_f(c):\n    pass\n",
+       "tests": [
+        {
+         "expected": "32.0\n212.0",
+         "after": "print(c_to_f(0))\nprint(c_to_f(100))"
+        },
+        {
+         "expected": "-40.0",
+         "after": "print(c_to_f(-40))"
+        }
+       ],
+       "solution": "def c_to_f(c):\n    return c * 9 / 5 + 32",
+       "hint": "Replace pass with return c * 9 / 5 + 32.",
+       "explain": "Because / gives a float, the answers end in .0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5",
+   "week": "Week 5",
+   "title": "Lists and tuples",
+   "blurb": "indexes, append, remove, tuples, unpacking",
+   "status": "partial",
+   "lessons": [
+    {
+     "id": "u5l1",
+     "title": "Lists",
+     "steps": [
+      {
+       "type": "card",
+       "title": "A list holds many values",
+       "text": "A list is written with square brackets and commas. Items keep their order. `len()` tells you how many items there are.",
+       "code": "books = [\"Dune\", \"Emma\", \"Holes\"]\nprint(books)\nprint(len(books))",
+       "out": "['Dune', 'Emma', 'Holes']\n3"
+      },
+      {
+       "type": "card",
+       "title": "Indexes start at 0",
+       "text": "Get one item by putting its position in square brackets. The first item is at index 0. Negative numbers count from the end, so -1 is the last item.",
+       "code": "books = [\"Dune\", \"Emma\", \"Holes\"]\nprint(books[0])\nprint(books[-1])",
+       "out": "Dune\nHoles"
+      },
+      {
+       "type": "card",
+       "title": "Changing a list",
+       "text": "Lists can change. `.append()` adds to the end, `.remove()` deletes the first matching item, and assigning to an index replaces that item.",
+       "code": "books = [\"Dune\"]\nbooks.append(\"Emma\")\nbooks.append(\"Holes\")\nbooks.remove(\"Dune\")\nbooks[0] = \"Persuasion\"\nprint(books)",
+       "out": "['Persuasion', 'Holes']"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "nums = [10, 20, 30]\nprint(nums[1])",
+       "options": [
+        "20",
+        "10",
+        "30",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "Index 1 is the second item, because counting starts at 0.",
+       "hint": "Counting starts at 0.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "items = [\"a\", \"b\"]\nitems.append(\"c\")\nprint(len(items))",
+       "options": [
+        "3",
+        "2",
+        "abc",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "append adds one item, making three.",
+       "hint": "How many items after append?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "nums = [4, 5, 6]. What does nums[3] give?",
+       "options": [
+        "An IndexError",
+        "6",
+        "None",
+        "4"
+       ],
+       "answer": 0,
+       "explain": "The indexes are 0, 1 and 2. There is no index 3.",
+       "hint": "List the indexes for three items.",
+       "mono": false,
+       "code": "nums = [4, 5, 6]\nprint(nums[3])",
+       "error": "IndexError"
+      },
+      {
+       "type": "fill",
+       "q": "Add Milk to the end of the list",
+       "code": "shopping = [\"Eggs\"]\nshopping.___(\"Milk\")\nprint(shopping)",
+       "answers": [
+        "append"
+       ],
+       "distractors": [
+        "add",
+        "push",
+        "insert"
+       ],
+       "expect": "['Eggs', 'Milk']",
+       "explain": "append adds to the end. add and push are used in other languages, and insert needs a position too.",
+       "hint": "It means 'attach to the end'."
+      },
+      {
+       "type": "code",
+       "q": "Ask for 3 films, one at a time. Add each one to a list, then print the list.",
+       "starter": "films = []\n",
+       "tests": [
+        {
+         "expected": "['Up', 'Jaws', 'Heat']",
+         "stdin": [
+          "Up",
+          "Jaws",
+          "Heat"
+         ]
+        },
+        {
+         "expected": "['A', 'B', 'C']",
+         "stdin": [
+          "A",
+          "B",
+          "C"
+         ]
+        }
+       ],
+       "solution": "films = []\nfor i in range(3):\n    films.append(input(\"Film: \"))\nprint(films)",
+       "hint": "Use a for loop with range(3), and append each input() to films. Print after the loop.",
+       "explain": "Each append adds one film to the end, so they stay in the order they were typed."
+      }
+     ]
+    },
+    {
+     "id": "u5l2",
+     "title": "Tuples",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Tuples cannot change",
+       "text": "A tuple uses round brackets. You read it like a list, with indexes and loops, but you cannot add, remove or change items. Use one for values that belong together and should stay fixed, such as coordinates.",
+       "code": "point = (3, 7)\nprint(point[0])\nprint(len(point))",
+       "out": "3\n2"
+      },
+      {
+       "type": "card",
+       "title": "Trying to change a tuple",
+       "text": "Assigning to a tuple item raises a TypeError. That is useful: it protects data that should never change.",
+       "code": "days = (\"Mon\", \"Tue\")\ndays[0] = \"Sun\"",
+       "out": "",
+       "error": "TypeError: 'tuple' object does not support item assignment"
+      },
+      {
+       "type": "card",
+       "title": "Unpacking",
+       "text": "You can split a tuple into separate variables in one line. The number of names must match the number of items.",
+       "code": "name, age = (\"Sam\", 19)\nprint(name)\nprint(age)",
+       "out": "Sam\n19"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "t = (1, 2, 3)\nprint(t[-1])",
+       "options": [
+        "3",
+        "1",
+        "-1",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "-1 is the last item.",
+       "hint": "Negative indexes count from the end.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which of these is a tuple?",
+       "options": [
+        "(1, 2, 3)",
+        "[1, 2, 3]",
+        "{1, 2, 3}",
+        "\"1, 2, 3\""
+       ],
+       "answer": 0,
+       "explain": "Round brackets make a tuple. Square brackets are a list, curly brackets a set, and quotes a string.",
+       "hint": "Look at the bracket shape.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Why choose a tuple rather than a list?",
+       "options": [
+        "The values should not change",
+        "It can hold more items",
+        "It is the only thing you can loop over",
+        "It sorts itself"
+       ],
+       "answer": 0,
+       "explain": "Tuples are fixed, which protects values that belong together.",
+       "hint": "What can a list do that a tuple cannot?",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Unpack the tuple into x and y so it prints 13",
+       "code": "x, y ___ (5, 8)\nprint(x + y)",
+       "answers": [
+        "="
+       ],
+       "distractors": [
+        "==",
+        "in",
+        ":"
+       ],
+       "expect": "13",
+       "explain": "Unpacking is an assignment, so it uses a single =.",
+       "hint": "It stores values, so which symbol is that?"
+      },
+      {
+       "type": "code",
+       "q": "rgb = (255, 128, 0) is given. Unpack it into r, g and b, then print them on one line separated by spaces.",
+       "starter": "rgb = (255, 128, 0)\n",
+       "tests": [
+        {
+         "expected": "255 128 0"
+        }
+       ],
+       "solution": "rgb = (255, 128, 0)\nr, g, b = rgb\nprint(r, g, b)",
+       "hint": "r, g, b = rgb, then print(r, g, b).",
+       "explain": "Three names for three items, and the commas in print() add the spaces."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6",
+   "week": "Week 6",
+   "title": "Files",
+   "blurb": "open, write, read, append, with",
+   "status": "partial",
+   "lessons": [
+    {
+     "id": "u6l1",
+     "title": "Writing and reading",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Opening a file",
+       "text": "Use `open()` to connect your program to a file. Mode `\"w\"` writes and wipes the file first, and `\"r\"` reads. Writing it with `with` closes the file for you when the block ends.",
+       "code": "with open(\"notes.txt\", \"w\") as f:\n    f.write(\"Hello file\\n\")\n    f.write(\"Second line\\n\")\nprint(\"Saved\")",
+       "out": "Saved"
+      },
+      {
+       "type": "card",
+       "title": "Reading it back",
+       "text": "`.read()` gives you the whole file as one string. Each `\\n` in the file is a line break.",
+       "code": "with open(\"notes.txt\", \"w\") as f:\n    f.write(\"Line 1\\nLine 2\")\n\nwith open(\"notes.txt\", \"r\") as f:\n    text = f.read()\nprint(text)",
+       "out": "Line 1\nLine 2"
+      },
+      {
+       "type": "card",
+       "title": "Files in this app",
+       "text": "Files you make here live in a temporary space inside the app and disappear when it reloads. On your own computer, they are saved in the same folder as your .py file."
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "with open(\"a.txt\", \"w\") as f:\n    f.write(\"hi\")\n\nwith open(\"a.txt\") as f:\n    print(f.read().upper())",
+       "options": [
+        "HI",
+        "hi",
+        "a.txt",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "The file contains hi, and .upper() makes it HI. With no mode given, open() reads.",
+       "hint": "What was written into the file?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What does mode \"w\" do to a file that already exists?",
+       "options": [
+        "Wipes it and starts it empty",
+        "Adds to the end",
+        "Only reads it",
+        "Makes a copy"
+       ],
+       "answer": 0,
+       "explain": "Be careful: \"w\" replaces everything. Use \"a\" to add to the end.",
+       "hint": "w stands for write, starting fresh.",
+       "mono": false
+      },
+      {
+       "type": "fill",
+       "q": "Complete the code so it prints 42",
+       "code": "with ___(\"data.txt\", \"w\") ___ f:\n    f.write(\"42\")\n\nwith open(\"data.txt\") as f:\n    print(f.read())",
+       "answers": [
+        "open",
+        "as"
+       ],
+       "distractors": [
+        "file",
+        "in",
+        "to"
+       ],
+       "expect": "42",
+       "explain": "The pattern is: with open(name, mode) as f:",
+       "hint": "Look at the second with line."
+      },
+      {
+       "type": "code",
+       "q": "Write the word Saved into result.txt. Then open the file again, read it and print what it contains.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "Saved"
+        }
+       ],
+       "solution": "with open(\"result.txt\", \"w\") as f:\n    f.write(\"Saved\")\n\nwith open(\"result.txt\") as f:\n    print(f.read())",
+       "hint": "Two with blocks: one with \"w\" to write, one to read and print f.read().",
+       "explain": "Reading the file back proves the write worked.",
+       "require": [
+        {
+         "text": "open(",
+         "msg": "Use open() to write and read the file."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "u6l2",
+     "title": "Appending and lines",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Adding with append mode",
+       "text": "Mode `\"a\"` adds to the end of a file instead of wiping it. Add `\\n` yourself if you want each entry on a new line. `.strip()` removes spaces and line breaks from both ends of a string.",
+       "code": "with open(\"log.txt\", \"w\") as f:\n    f.write(\"start\\n\")\n\nwith open(\"log.txt\", \"a\") as f:\n    f.write(\"more\\n\")\n\nwith open(\"log.txt\") as f:\n    print(f.read().strip())",
+       "out": "start\nmore"
+      },
+      {
+       "type": "card",
+       "title": "Reading line by line",
+       "text": "Looping over a file gives you one line per round. Each line still ends with `\\n`, so use `.strip()` before printing or comparing it.",
+       "code": "with open(\"scores.txt\", \"w\") as f:\n    f.write(\"Ava 12\\nLeo 9\\n\")\n\nwith open(\"scores.txt\") as f:\n    for line in f:\n        print(line.strip())",
+       "out": "Ava 12\nLeo 9"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "with open(\"t.txt\", \"w\") as f:\n    f.write(\"a\\n\")\nwith open(\"t.txt\", \"a\") as f:\n    f.write(\"b\\n\")\n\ncount = 0\nwith open(\"t.txt\") as f:\n    for line in f:\n        count += 1\nprint(count)",
+       "options": [
+        "2",
+        "1",
+        "0",
+        "4"
+       ],
+       "answer": 0,
+       "explain": "\"a\" added a second line rather than replacing the first.",
+       "hint": "Did the second block wipe the file?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "Which mode adds to a file without deleting what is already there?",
+       "options": [
+        "\"a\"",
+        "\"w\"",
+        "\"r\"",
+        "\"x\""
+       ],
+       "answer": 0,
+       "explain": "\"a\" is append. \"w\" wipes, \"r\" reads, and \"x\" only creates a new file.",
+       "hint": "a is for append.",
+       "mono": true
+      },
+      {
+       "type": "order",
+       "q": "Order the lines: write two pets to a file, then print them one per line",
+       "lines": [
+        "with open(\"pets.txt\", \"w\") as f:",
+        "    f.write(\"cat\\ndog\\n\")",
+        "with open(\"pets.txt\") as f:",
+        "    for line in f:",
+        "        print(line.strip())"
+       ],
+       "expect": "cat\ndog",
+       "explain": "The file must be written before it can be read.",
+       "hint": "Writing comes first."
+      },
+      {
+       "type": "code",
+       "q": "Ask for 3 names. Write each one on its own line in names.txt. Then read the file and print how many lines it has.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "3",
+         "stdin": [
+          "Ava",
+          "Leo",
+          "Mia"
+         ]
+        }
+       ],
+       "solution": "with open(\"names.txt\", \"w\") as f:\n    for i in range(3):\n        f.write(input(\"Name: \") + \"\\n\")\n\ncount = 0\nwith open(\"names.txt\") as f:\n    for line in f:\n        count += 1\nprint(count)",
+       "hint": "Write input() + \"\\n\" three times, then loop over the file and count.",
+       "explain": "Adding \\n after each name puts each one on its own line."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7",
+   "week": "Week 7",
+   "title": "Sets and dictionaries",
+   "blurb": "key-value pairs, unique items, set maths",
+   "status": "partial",
+   "lessons": [
+    {
+     "id": "u7l1",
+     "title": "Dictionaries",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Key and value pairs",
+       "text": "A dictionary stores pairs, written `key: value` inside curly brackets. You look a value up by its key, not by its position.",
+       "code": "ages = {\"Ava\": 19, \"Leo\": 21}\nprint(ages[\"Leo\"])",
+       "out": "21"
+      },
+      {
+       "type": "card",
+       "title": "Adding and changing",
+       "text": "Assigning to a key adds it if it is new, or replaces its value if it exists. `len()` counts the pairs.",
+       "code": "stock = {\"apples\": 5}\nstock[\"pears\"] = 2\nstock[\"apples\"] = 4\nprint(stock)\nprint(len(stock))",
+       "out": "{'apples': 4, 'pears': 2}\n2"
+      },
+      {
+       "type": "card",
+       "title": "Looping and safe lookups",
+       "text": "`for key, value in d.items()` goes through every pair. Looking up a missing key raises a KeyError, so check with `in` first or use `.get()` with a default.",
+       "code": "prices = {\"tea\": 1.5, \"cake\": 2.75}\nfor item, price in prices.items():\n    print(f\"{item}: {price}\")\nprint(\"coffee\" in prices)\nprint(prices.get(\"coffee\", 0))",
+       "out": "tea: 1.5\ncake: 2.75\nFalse\n0"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "d = {\"a\": 1, \"b\": 2}\nd[\"a\"] = 10\nprint(d[\"a\"] + d[\"b\"])",
+       "options": [
+        "12",
+        "3",
+        "11",
+        "Error"
+       ],
+       "answer": 0,
+       "explain": "d[\"a\"] was changed to 10, and 10 + 2 is 12.",
+       "hint": "What is d[\"a\"] after the second line?",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "What happens here?",
+       "options": [
+        "A KeyError",
+        "It prints None",
+        "It prints 0",
+        "It prints y"
+       ],
+       "answer": 0,
+       "explain": "There is no \"y\" key. Use d.get(\"y\") to get None instead of an error.",
+       "hint": "Does the key exist?",
+       "mono": false,
+       "code": "d = {\"x\": 1}\nprint(d[\"y\"])",
+       "error": "KeyError"
+      },
+      {
+       "type": "fill",
+       "q": "Add Italy to the dictionary so it prints Rome",
+       "code": "capitals = {\"France\": \"Paris\"}\ncapitals[___] = \"Rome\"\nprint(capitals[\"Italy\"])",
+       "answers": [
+        "\"Italy\""
+       ],
+       "distractors": [
+        "Italy",
+        "\"Rome\"",
+        "[Italy]"
+       ],
+       "expect": "Rome",
+       "explain": "The key is the text \"Italy\", so it needs quotes. Without them Python looks for a variable called Italy.",
+       "hint": "Keys that are text need quotes."
+      },
+      {
+       "type": "code",
+       "q": "Print each name and score on its own line, like: Ava: 12",
+       "starter": "scores = {\"Ava\": 12, \"Leo\": 9, \"Mia\": 15}\n",
+       "tests": [
+        {
+         "expected": "Ava: 12\nLeo: 9\nMia: 15"
+        }
+       ],
+       "solution": "scores = {\"Ava\": 12, \"Leo\": 9, \"Mia\": 15}\nfor name, score in scores.items():\n    print(f\"{name}: {score}\")",
+       "hint": "for name, score in scores.items(): then print(f\"{name}: {score}\")",
+       "explain": ".items() gives both the key and the value in each round."
+      }
+     ]
+    },
+    {
+     "id": "u7l2",
+     "title": "Sets",
+     "steps": [
+      {
+       "type": "card",
+       "title": "Sets keep unique items",
+       "text": "A set uses curly brackets but has no keys. It removes duplicates automatically and has no fixed order. `set()` turns a list into a set.",
+       "code": "tags = {\"python\", \"code\", \"python\"}\nprint(len(tags))\nnums = set([1, 2, 2, 3, 3, 3])\nprint(nums)",
+       "out": "2\n{1, 2, 3}"
+      },
+      {
+       "type": "card",
+       "title": "Adding and checking",
+       "text": "`.add()` puts in a new item, and `in` checks whether something is there. An empty set must be written `set()`, because `{}` makes an empty dictionary.",
+       "code": "seen = set()\nseen.add(\"cat\")\nseen.add(\"dog\")\nseen.add(\"cat\")\nprint(len(seen))\nprint(\"dog\" in seen)\nprint(type({}))",
+       "out": "2\nTrue\n<class 'dict'>"
+      },
+      {
+       "type": "card",
+       "title": "Comparing sets",
+       "text": "`a & b` gives the items in both sets, `a | b` the items in either, and `a - b` the items in `a` but not in `b`.",
+       "code": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(a & b)\nprint(a | b)\nprint(a - b)",
+       "out": "{2, 3}\n{1, 2, 3, 4}\n{1}"
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "print(len({5, 5, 5, 6}))",
+       "options": [
+        "2",
+        "4",
+        "1",
+        "3"
+       ],
+       "answer": 0,
+       "explain": "Duplicates are removed, leaving 5 and 6.",
+       "hint": "Sets keep only one of each value.",
+       "mono": true
+      },
+      {
+       "type": "mcq",
+       "q": "How do you make an empty set?",
+       "options": [
+        "set()",
+        "{}",
+        "[]",
+        "empty()"
+       ],
+       "answer": 0,
+       "explain": "{} is an empty dictionary, so empty sets use set().",
+       "hint": "Curly brackets on their own mean something else.",
+       "mono": true
+      },
+      {
+       "type": "output",
+       "q": "What does this print?",
+       "code": "a = {1, 2}\nb = {2, 3}\nprint(a & b)",
+       "options": [
+        "{2}",
+        "{1, 2, 3}",
+        "{1, 3}",
+        "{1}"
+       ],
+       "answer": 0,
+       "explain": "& keeps only the items found in both sets.",
+       "hint": "Which number is in both?",
+       "mono": true
+      },
+      {
+       "type": "code",
+       "q": "Ask for 5 words, one at a time. Print how many different words there were.",
+       "starter": "",
+       "tests": [
+        {
+         "expected": "3",
+         "stdin": [
+          "a",
+          "b",
+          "a",
+          "c",
+          "b"
+         ]
+        },
+        {
+         "expected": "1",
+         "stdin": [
+          "x",
+          "x",
+          "x",
+          "x",
+          "x"
+         ]
+        },
+        {
+         "expected": "5",
+         "stdin": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+         ]
+        }
+       ],
+       "solution": "words = set()\nfor i in range(5):\n    words.add(input(\"Word: \"))\nprint(len(words))",
+       "hint": "Start with set(), add each input() in a loop of 5, then print len().",
+       "explain": "A set ignores repeats, so its length is the number of different words."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
